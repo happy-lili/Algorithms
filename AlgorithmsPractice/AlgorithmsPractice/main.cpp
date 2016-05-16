@@ -14,7 +14,20 @@ int search(int A[], int size, int key)
 	return -1;
 }
 
-int search2(int A[], int size, int key)
+int search_2(int A[], int size, int key)
+{
+	int i = 0;
+	while (i < size)
+	{
+		if (A[i] == key)
+			return i;
+		++i;
+	}
+	    
+	return -1;
+}
+
+int search_3(int A[], int size, int key)
 {
 	A[size] = key;
 	int i = 0;
@@ -23,10 +36,9 @@ int search2(int A[], int size, int key)
 
 	if (i != size)
 		return i;
-	    
+
 	return -1;
 }
-
 
 int main()
 {
