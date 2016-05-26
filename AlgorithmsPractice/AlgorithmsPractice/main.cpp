@@ -66,6 +66,51 @@ int search_4(int A[], int size, int key)
 	return -1;
 }
 
+/*int search_binary(int B[], int key)
+{
+	if (B[0] != key)
+	 {
+		 cout << "if" << endl;
+		 while (B[x] != key && x != 0)
+		 {
+			 cout << "while" << endl;
+			 if (B[x] < key)
+				 x += ceil(x / 2);
+			 else
+				 x -= ceil(x / 2);
+				}
+		 return x;
+		 cout << x << endl;
+			}
+	return 0;//??
+	cout << "0" << endl;
+}*/
+
+int search_binary(int B[], int key, int size)
+{
+	if (B[0] != key)
+	{
+		cout << "if" << endl;
+		while (B[x] != key && x != 0)
+		{
+			cout << "while" << endl;
+			if (B[x] < key)
+				x += ceil(x / 2);
+			else
+				x -= ceil(x / 2);
+		}
+		return x;
+		cout << x << endl;
+	}
+	return 0;//??
+	cout << "0" << endl;
+}
+
+
+int search_binaryRec()
+{
+
+}
 
 
 typedef int(*search_func)(int A[], int size, int key);
@@ -137,7 +182,15 @@ void testingProcess()
 int main(int argc, char* argv[])
 {
 
-	testingProcess();
+	//testingProcess();
+	int B[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+	search_binary(B, 7);
+
+	int key = 3;
+	int x = sizeof(B) / sizeof(B[0]);
+	int y = x / 2;
+	binFuncRec(B, key, y);
+
 
 	_getch();
 	return 0;
